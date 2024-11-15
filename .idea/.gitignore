@@ -1,0 +1,16 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+api-gateway/src/main/resources/application.yml
+connections-service/src/main/resources/application.properties
+connections-service/src/main/resources/application.yml
+discovery-server/src/main/resources/application.properties
+notification-service/src/main/resources/application.yml
+notification-service/src/main/resources/application.properties
+posts-service/src/main/resources/application.yml
+posts-service/src/main/resources/application.properties
+user-service/src/main/resources/application.yml
+user-service/src/main/resources/application.properties
+
+
