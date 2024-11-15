@@ -1,6 +1,6 @@
 # LinkedIn Clone Backend - (Spring Boot)
 
-#### This project is a LinkedIn-inspired backend platform built with Spring Boot, designed to connect users and facilitate professional networking through an efficient and scalable architecture.
+#### This project is a LinkedIn-inspired backend built with Spring Boot. It connects users and supports professional networking with an efficient, easy-to-scale setup.
 
 # Key Features:
 
