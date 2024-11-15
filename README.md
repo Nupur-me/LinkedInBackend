@@ -1,15 +1,42 @@
-Developed a backend for a LinkedIn-like platform using a microservices architecture, integrating advanced technologies to handle user, post, and connection functionalities efficiently, with an emphasis on scalability and modularity.
+# LinkedIn Clone Backend - (Spring Boot)
 
-Microservices Architecture: Created with Spring Boot, where services for user management, posts, and connections are independently managed and scalable.
+#### This project is a LinkedIn-inspired backend platform built with Spring Boot, designed to connect users and facilitate professional networking through an efficient and scalable architecture.
 
-Data Management:
+# Key Features:
 
-PostgreSQL: Used for structured data storage, managing the user and post services.
-Neo4j: Integrated within the connection service to efficiently handle relationship-based queries, similar to LinkedIn’s professional networking.
-Real-Time Data Processing: Implemented Kafka to handle event-driven data flow for responsive interactions, managing topics such as connection requests, post creation, and post likes.
++ **User Profiles:** Users can create profiles, view connections, accept connection requests and send connections requests.
++ **Post Management:** Users can create and like on posts.
++ **Connection System:** Allows users to send, accept, and reject connection requests.
++ **Event-Driven Architecture:** Kafka is used for efficient, real-time event processing for actions like connection requests and post interactions.
++ **Neo4j-Powered Connections:** Utilizes Neo4j for efficient storage and retrieval of connection relationships, optimizing queries in the connection service.
 
-Service Discovery and Load Balancing:
+## Security Features:
++ **Authentication:** JWT tokens are implemented for secure authentication and session management.
++ **Authorization:** Role-based access control ensures users can only access features pertinent to their role.
++ **Data Protection:** Sensitive data, such as passwords, are securely encrypted to safeguard user information.
 
-Discovery Server: A Eureka-based Discovery Server is used to register and locate services dynamically, ensuring seamless scaling and efficient communication between services.
-API Gateway: Acts as a centralized entry point, providing streamlined, secure API requests across services.
-This project showcases a robust backend architecture with a focus on distributed systems, real-time event processing, and database optimization, making it well-suited for social networking applications.
+# Technologies Used:
++ **Back-End:** Spring Boot, Spring Security, Spring Data JPA
++ **Databases:** PostgreSQL for structured data and Neo4j for connection relationships.
++ **Event Processing:** Kafka for real-time data processing and event-driven functionality.
++ **Service Discovery and Load Balancing:** Eureka Discovery Server for dynamic service registration and API Gateway for efficient routing.
+
+# Controllers:
+
+### Connections Controller
+- `/core/first-degree` - `GET`: Retrieve a list of first-degree connections.
+- `/core/request/{userId}` - `POST`: Send a connection request to the specified user.
+- `/core/accept/{userId}` - `POST`: Accept a pending connection request from the specified user.
+- `/core/reject/{userId}` - `POST`: Reject a pending connection request from the specified user.
+
+### Likes Controller
+- `/likes/{postId}` - `POST`: Like the specified post.
+- `/likes/{postId}` - `DELETE`: Unlike the specified post.
+
+### Posts Controller
+- `/core` - `POST`: Create a new post.
+- `/core/{postId}` - `GET`: Retrieve a specific post by its ID.
+
+### Auth Controller
+- `/auth/signup` - `POST`: Register a new user account.
+- `/auth/login` - `POST`: Login and receive a JWT token for authentication.
